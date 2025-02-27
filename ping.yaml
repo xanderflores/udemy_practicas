@@ -10,7 +10,7 @@
       touch /tmp/fichero1.txt
 
 - name: Instalar Nginx
-  hosts: debian
+  hosts: debian1
 
   tasks:
   - name: Parar Apache
