@@ -1,0 +1,23 @@
+---
+- name: Instalar software 
+  hosts: all
+  vars_files:
+     - software_rocky.yaml
+     - software_debian.yaml
+
+  tasks:
+  - name: Instalar debian
+    ansible.builtin.apt:
+      name: "{{item}}"
+      state: present
+    loop: "{{software_debian}}"
+    when: ansible_distribution=='Debian' 
+  
+  
+  - name: Instalar rocky
+    ansible.builtin.yum:
+      name: "{{item}}"
+      state: present
+    loop: "{{software_rocky}}"
+    when: ansible_distribution=='Rocky'
+       

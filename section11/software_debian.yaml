@@ -1,0 +1,4 @@
+software_debian:
+    - apache2
+    - nginx
+    - git

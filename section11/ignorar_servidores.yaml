@@ -1,0 +1,14 @@
+---
+- name: Control de errores
+  hosts: debian
+  
+
+  tasks:
+  - name: Visualizar un mensaje
+    ansible.builtin.debug:
+      msg: Mensaje del servidor    
+
+  - name: Visualizar directorio principal
+    ansible.builtin.command:
+      cmd: ls -l /
+    ignore_unreachable: true
